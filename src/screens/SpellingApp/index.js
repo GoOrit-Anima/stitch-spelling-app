@@ -1,0 +1,1 @@
+export { SpellingApp } from "./SpellingApp";

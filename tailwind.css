@@ -1,0 +1,319 @@
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .all-\[unset\] {
+    all: unset;
+  }
+}
+
+:root {
+  --m3-body-medium-font-family: "Roboto", Helvetica;
+  --m3-body-medium-font-size: 14px;
+  --m3-body-medium-font-style: normal;
+  --m3-body-medium-font-weight: 400;
+  --m3-body-medium-letter-spacing: 0.25px;
+  --m3-body-medium-line-height: 20px;
+  --m3-body-small-font-family: "Roboto", Helvetica;
+  --m3-body-small-font-size: 12px;
+  --m3-body-small-font-style: normal;
+  --m3-body-small-font-weight: 400;
+  --m3-body-small-letter-spacing: 0.4000000059604645px;
+  --m3-body-small-line-height: 16px;
+  --m3-schemes-on-surface: rgba(29, 27, 32, 1);
+  --m3-schemes-on-surface-variant: rgba(73, 69, 79, 1);
+  --m3-schemes-surface-container-highest: rgba(230, 224, 233, 1);
+  --m3-title-large-font-family: "Roboto", Helvetica;
+  --m3-title-large-font-size: 22px;
+  --m3-title-large-font-style: normal;
+  --m3-title-large-font-weight: 400;
+  --m3-title-large-letter-spacing: 0px;
+  --m3-title-large-line-height: 28px;
+}
+
+/*
+
+To enable a theme in your HTML, simply add one of the following data attributes to an HTML element, like so:
+
+<body data-m3-mode="light">
+    <!-- the rest of your content -->
+</body>
+
+You can apply the theme on any DOM node, not just the `body`
+
+*/
+
+[data-m3-mode="light"] {
+  --m3-schemes-on-surface: rgba(29, 27, 32, 1);
+  --m3-schemes-on-surface-variant: rgba(73, 69, 79, 1);
+  --m3-schemes-surface-container-highest: rgba(230, 224, 233, 1);
+}
+
+[data-m3-mode="light-high-contrast"] {
+  --m3-schemes-on-surface: rgba(0, 0, 0, 1);
+  --m3-schemes-on-surface-variant: rgba(37, 35, 43, 1);
+  --m3-schemes-surface-container-highest: rgba(230, 224, 233, 1);
+}
+
+[data-m3-mode="light-medium-contrast"] {
+  --m3-schemes-on-surface: rgba(29, 27, 32, 1);
+  --m3-schemes-on-surface-variant: rgba(69, 65, 74, 1);
+  --m3-schemes-surface-container-highest: rgba(230, 224, 233, 1);
+}
+
+[data-m3-mode="dark"] {
+  --m3-schemes-on-surface: rgba(230, 224, 233, 1);
+  --m3-schemes-on-surface-variant: rgba(202, 196, 208, 1);
+  --m3-schemes-surface-container-highest: rgba(54, 52, 59, 1);
+}
+
+[data-m3-mode="dark-high-contrast"] {
+  --m3-schemes-on-surface: rgba(255, 255, 255, 1);
+  --m3-schemes-on-surface-variant: rgba(255, 249, 255, 1);
+  --m3-schemes-surface-container-highest: rgba(54, 52, 58, 1);
+}
+
+[data-m3-mode="dark-medium-contrast"] {
+  --m3-schemes-on-surface: rgba(255, 249, 255, 1);
+  --m3-schemes-on-surface-variant: rgba(206, 200, 212, 1);
+  --m3-schemes-surface-container-highest: rgba(54, 52, 58, 1);
+}
+
+[data-m3-mode="monochrome-LT"] {
+  --m3-schemes-on-surface: rgba(27, 27, 27, 1);
+  --m3-schemes-on-surface-variant: rgba(71, 71, 71, 1);
+  --m3-schemes-surface-container-highest: rgba(226, 226, 226, 1);
+}
+
+[data-m3-mode="monochrome-DT"] {
+  --m3-schemes-on-surface: rgba(226, 226, 226, 1);
+  --m3-schemes-on-surface-variant: rgba(198, 198, 198, 1);
+  --m3-schemes-surface-container-highest: rgba(53, 53, 53, 1);
+}
+
+[data-m3-mode="pink-LT"] {
+  --m3-schemes-on-surface: rgba(33, 25, 28, 1);
+  --m3-schemes-on-surface-variant: rgba(80, 67, 72, 1);
+  --m3-schemes-surface-container-highest: rgba(238, 223, 227, 1);
+}
+
+[data-m3-mode="pink-DT"] {
+  --m3-schemes-on-surface: rgba(238, 223, 227, 1);
+  --m3-schemes-on-surface-variant: rgba(212, 194, 199, 1);
+  --m3-schemes-surface-container-highest: rgba(59, 50, 53, 1);
+}
+
+[data-m3-mode="rose-LT"] {
+  --m3-schemes-on-surface: rgba(34, 25, 26, 1);
+  --m3-schemes-on-surface-variant: rgba(82, 67, 69, 1);
+  --m3-schemes-surface-container-highest: rgba(240, 222, 223, 1);
+}
+
+[data-m3-mode="rose-DT"] {
+  --m3-schemes-on-surface: rgba(240, 222, 223, 1);
+  --m3-schemes-on-surface-variant: rgba(215, 194, 195, 1);
+  --m3-schemes-surface-container-highest: rgba(61, 50, 51, 1);
+}
+
+[data-m3-mode="red-LT"] {
+  --m3-schemes-on-surface: rgba(35, 25, 24, 1);
+  --m3-schemes-on-surface-variant: rgba(83, 67, 65, 1);
+  --m3-schemes-surface-container-highest: rgba(241, 222, 220, 1);
+}
+
+[data-m3-mode="red-DT"] {
+  --m3-schemes-on-surface: rgba(241, 222, 220, 1);
+  --m3-schemes-on-surface-variant: rgba(216, 194, 190, 1);
+  --m3-schemes-surface-container-highest: rgba(61, 50, 49, 1);
+}
+
+[data-m3-mode="orange-LT"] {
+  --m3-schemes-on-surface: rgba(34, 26, 21, 1);
+  --m3-schemes-on-surface-variant: rgba(82, 68, 60, 1);
+  --m3-schemes-surface-container-highest: rgba(240, 223, 215, 1);
+}
+
+[data-m3-mode="orange-DT"] {
+  --m3-schemes-on-surface: rgba(240, 223, 215, 1);
+  --m3-schemes-on-surface-variant: rgba(215, 194, 184, 1);
+  --m3-schemes-surface-container-highest: rgba(61, 51, 45, 1);
+}
+
+[data-m3-mode="yellow-LT"] {
+  --m3-schemes-on-surface: rgba(31, 27, 19, 1);
+  --m3-schemes-on-surface-variant: rgba(77, 70, 57, 1);
+  --m3-schemes-surface-container-highest: rgba(235, 225, 212, 1);
+}
+
+[data-m3-mode="yellow-DT"] {
+  --m3-schemes-on-surface: rgba(235, 225, 212, 1);
+  --m3-schemes-on-surface-variant: rgba(208, 197, 180, 1);
+  --m3-schemes-surface-container-highest: rgba(57, 52, 43, 1);
+}
+
+[data-m3-mode="chartreuse-LT"] {
+  --m3-schemes-on-surface: rgba(27, 28, 20, 1);
+  --m3-schemes-on-surface-variant: rgba(71, 72, 59, 1);
+  --m3-schemes-surface-container-highest: rgba(229, 227, 214, 1);
+}
+
+[data-m3-mode="chartreuse-DT"] {
+  --m3-schemes-on-surface: rgba(229, 227, 214, 1);
+  --m3-schemes-on-surface-variant: rgba(200, 199, 183, 1);
+  --m3-schemes-surface-container-highest: rgba(53, 53, 45, 1);
+}
+
+[data-m3-mode="green-LT"] {
+  --m3-schemes-on-surface: rgba(24, 29, 24, 1);
+  --m3-schemes-on-surface-variant: rgba(66, 73, 64, 1);
+  --m3-schemes-surface-container-highest: rgba(224, 228, 219, 1);
+}
+
+[data-m3-mode="green-DT"] {
+  --m3-schemes-on-surface: rgba(224, 228, 219, 1);
+  --m3-schemes-on-surface-variant: rgba(193, 201, 190, 1);
+  --m3-schemes-surface-container-highest: rgba(49, 54, 48, 1);
+}
+
+[data-m3-mode="teal-LT"] {
+  --m3-schemes-on-surface: rgba(23, 29, 27, 1);
+  --m3-schemes-on-surface-variant: rgba(63, 73, 70, 1);
+  --m3-schemes-surface-container-highest: rgba(221, 228, 225, 1);
+}
+
+[data-m3-mode="teal-DT"] {
+  --m3-schemes-on-surface: rgba(221, 228, 225, 1);
+  --m3-schemes-on-surface-variant: rgba(190, 201, 197, 1);
+  --m3-schemes-surface-container-highest: rgba(48, 54, 52, 1);
+}
+
+[data-m3-mode="cyan-LT"] {
+  --m3-schemes-on-surface: rgba(23, 28, 30, 1);
+  --m3-schemes-on-surface-variant: rgba(64, 72, 75, 1);
+  --m3-schemes-surface-container-highest: rgba(222, 227, 230, 1);
+}
+
+[data-m3-mode="cyan-DT"] {
+  --m3-schemes-on-surface: rgba(222, 227, 230, 1);
+  --m3-schemes-on-surface-variant: rgba(191, 200, 204, 1);
+  --m3-schemes-surface-container-highest: rgba(48, 54, 56, 1);
+}
+
+[data-m3-mode="blue-LT"] {
+  --m3-schemes-on-surface: rgba(26, 27, 33, 1);
+  --m3-schemes-on-surface-variant: rgba(68, 70, 79, 1);
+  --m3-schemes-surface-container-highest: rgba(226, 226, 233, 1);
+}
+
+[data-m3-mode="blue-DT"] {
+  --m3-schemes-on-surface: rgba(226, 226, 233, 1);
+  --m3-schemes-on-surface-variant: rgba(197, 198, 208, 1);
+  --m3-schemes-surface-container-highest: rgba(51, 52, 58, 1);
+}
+
+[data-m3-mode="indigo-LT"] {
+  --m3-schemes-on-surface: rgba(28, 27, 33, 1);
+  --m3-schemes-on-surface-variant: rgba(71, 70, 79, 1);
+  --m3-schemes-surface-container-highest: rgba(229, 225, 233, 1);
+}
+
+[data-m3-mode="indigo-DT"] {
+  --m3-schemes-on-surface: rgba(229, 225, 233, 1);
+  --m3-schemes-on-surface-variant: rgba(200, 197, 208, 1);
+  --m3-schemes-surface-container-highest: rgba(53, 52, 58, 1);
+}
+
+[data-m3-mode="purple-LT"] {
+  --m3-schemes-on-surface: rgba(29, 26, 32, 1);
+  --m3-schemes-on-surface-variant: rgba(74, 69, 78, 1);
+  --m3-schemes-surface-container-highest: rgba(231, 224, 232, 1);
+}
+
+[data-m3-mode="purple-DT"] {
+  --m3-schemes-on-surface: rgba(231, 224, 232, 1);
+  --m3-schemes-on-surface-variant: rgba(203, 196, 207, 1);
+  --m3-schemes-surface-container-highest: rgba(55, 51, 58, 1);
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 47.4% 11.2%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 47.4% 11.2%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 215 20.2% 65.1%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
+
+    --muted: 223 47% 11%;
+    --muted-foreground: 215.4 16.3% 56.9%;
+
+    --accent: 216 34% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    --popover: 224 71% 4%;
+    --popover-foreground: 215 20.2% 65.1%;
+
+    --border: 216 34% 17%;
+    --input: 216 34% 17%;
+
+    --card: 224 71% 4%;
+    --card-foreground: 213 31% 91%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 1.2%;
+
+    --secondary: 222.2 47.4% 11.2%;
+    --secondary-foreground: 210 40% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 216 34% 17%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
